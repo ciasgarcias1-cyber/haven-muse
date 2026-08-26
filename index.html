@@ -25,7 +25,7 @@
 <header>
 
   <a href="#inicio" class="logo">
-    <img src="logo2.png" alt="HAVEN MUSE">
+    <img src="logo.png" alt="HAVEN MUSE">
   </a>
 
   <div class="header-acoes">
@@ -120,9 +120,9 @@
         Ver produtos
       </a>
 
-      <img src="11.jpg" alt="HAVEN MUSE" class="hero-imagem">
-      <img src="12.jpg" alt="HAVEN MUSE" class="hero-imagem">
-      <img src="13.jpg" alt="HAVEN MUSE" class="hero-imagem">
+      <img src="21.jpg" alt="HAVEN MUSE" class="hero-imagem">
+      <img src="29.jpg" alt="HAVEN MUSE" class="hero-imagem">
+      <img src="23.jpg" alt="HAVEN MUSE" class="hero-imagem">
 
     </div>
 
@@ -176,11 +176,8 @@
       <div class="produto"
         data-nome="Relógio Masculino"
         data-preco="11590"
-        data-imagem="ft4.jpg">
-
-        <span class="etiqueta">Destaque</span>
-
-        <img src="ft4.jpg" alt="Relógio Masculino">
+        data-imagem="2.jpg">
+        <img src="2.jpg" alt="Relógio Masculino">
 
         <h3>Relógio Masculino</h3>
 
@@ -214,9 +211,9 @@
       <div class="produto"
         data-nome="Óculos Solar"
         data-preco="9770"
-        data-imagem="ft9.jpg">
+        data-imagem="3.jpg">
 
-        <img src="ft9.jpg" alt="Óculos Solar">
+        <img src="3.jpg" alt="Óculos Solar">
 
         <h3>Óculos Solar</h3>
 
@@ -244,15 +241,48 @@
 
       </div>
 
+      <!-- PRODUTO 4 -->
+
+      <div class="produto"
+        data-nome="Tshirt Polo"
+        data-preco="11590"
+        data-imagem="28.jpg">
+        <img src="28.jpg" alt="Tshirt Polo">
+
+        <h3>T-shirt POLO</h3>
+
+        <p>
+          Para o acompanhar em todos momentos.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            4.900 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
 
       <!-- PRODUTO 3 -->
 
       <div class="produto"
         data-nome="Tshirt"
         data-preco="5990"
-        data-imagem="ft7.jpg">
+        data-imagem="4.jpg">
 
-        <img src="ft7.jpg" alt="Tshirt">
+        <img src="4.jpg" alt="Tshirt">
 
         <h3>Tshirt</h3>
 
@@ -296,7 +326,7 @@
     </p>
 
     <img
-      src="10.jpg"
+      src="24.jpg"
       alt="Outros produtos"
       class="imagem-outros-produtos">
 
@@ -309,9 +339,9 @@
       <div class="produto"
         data-nome="Auricular"
         data-preco="7789"
-        data-imagem="ft1.jpg">
+        data-imagem="25.jpg">
 
-        <img src="ft1.jpg" alt="Auricular">
+        <img src="25.jpg" alt="Auricular">
 
         <h3>Auricular</h3>
 
@@ -345,9 +375,9 @@
       <div class="produto"
         data-nome="Máquina de Barbear"
         data-preco="9730"
-        data-imagem="ft6.jpg">
+        data-imagem="26.jpg">
 
-        <img src="ft6.jpg" alt="Máquina de Barbear">
+        <img src="26.jpg" alt="Máquina de Barbear">
 
         <h3>Máquina de Barbear</h3>
 
@@ -381,14 +411,14 @@
       <div class="produto"
         data-nome="Fones de Ouvido"
         data-preco="5450"
-        data-imagem="ft8.jpg">
+        data-imagem="27.jpg">
 
-        <img src="ft8.jpg" alt="Fones de Ouvido">
+        <img src="27.jpg" alt="Kit de Utensílios">
 
-        <h3>Fones de Ouvido</h3>
+        <h3>Kit de Utensílios</h3>
 
         <p>
-          Fones de ouvido sem fio bluetooth à prova d'água.
+          ✨19 Peças de utensílios para sua cozinha ✨
         </p>
 
         <div class="produto-final">
@@ -435,18 +465,6 @@
         <p>
           Produtos selecionados com atenção.
         </p>
-
-      </div>
-
-      <div class="vantagem">
-
-        <h3>Variedade</h3>
-
-        <p>
-          Opções para diferentes estilos e necessidades.
-        </p>
-
-      </div>
 
       <div class="vantagem">
 
@@ -571,3 +589,1810 @@
 </body>
 
 </html>
+
+<script>
+/* =========================
+   MENU MOBILE
+========================= */
+
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("header nav");
+
+if (menu && nav) {
+
+  menu.addEventListener("click", function () {
+
+    if (nav.style.display === "block") {
+
+      nav.style.display = "none";
+      menu.textContent = "☰";
+
+    } else {
+
+      nav.style.display = "block";
+      menu.textContent = "✕";
+
+    }
+
+  });
+
+
+  /* =========================
+     FECHAR MENU AO CLICAR
+  ========================= */
+
+  const links = document.querySelectorAll("header nav a");
+
+  links.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+      nav.style.display = "none";
+      menu.textContent = "☰";
+
+    });
+
+  });
+
+}
+
+
+/* =========================
+   CARRINHO
+========================= */
+
+let carrinho = [];
+
+
+/* =========================
+   ELEMENTOS DO CARRINHO
+========================= */
+
+const carrinhoElemento =
+  document.getElementById("carrinho");
+
+const overlay =
+  document.getElementById("carrinho-overlay");
+
+const abrirCarrinho =
+  document.getElementById("abrir-carrinho");
+
+const fecharCarrinho =
+  document.getElementById("fechar-carrinho");
+
+const itensCarrinho =
+  document.getElementById("itens-carrinho");
+
+const subtotalCarrinho =
+  document.getElementById("subtotal-carrinho");
+
+const totalCarrinho =
+  document.getElementById("total-carrinho");
+
+const contadorCarrinho =
+  document.getElementById("contador-carrinho");
+
+
+/* =========================
+   ABRIR CARRINHO
+========================= */
+
+function abrirJanelaCarrinho() {
+
+  if (carrinhoElemento) {
+    carrinhoElemento.classList.add("aberto");
+  }
+
+  if (overlay) {
+    overlay.classList.add("aberto");
+  }
+
+}
+
+
+/* =========================
+   FECHAR CARRINHO
+========================= */
+
+function fecharJanelaCarrinho() {
+
+  if (carrinhoElemento) {
+    carrinhoElemento.classList.remove("aberto");
+  }
+
+  if (overlay) {
+    overlay.classList.remove("aberto");
+  }
+
+}
+
+
+if (abrirCarrinho) {
+
+  abrirCarrinho.addEventListener(
+    "click",
+    abrirJanelaCarrinho
+  );
+
+}
+
+
+if (fecharCarrinho) {
+
+  fecharCarrinho.addEventListener(
+    "click",
+    fecharJanelaCarrinho
+  );
+
+}
+
+
+if (overlay) {
+
+  overlay.addEventListener(
+    "click",
+    fecharJanelaCarrinho
+  );
+
+}
+
+
+/* =========================
+   BOTÕES ADICIONAR AO CARRINHO
+========================= */
+
+const botoesCarrinho =
+  document.querySelectorAll(".adicionar-carrinho");
+
+
+botoesCarrinho.forEach(function (botao) {
+
+  botao.addEventListener("click", function () {
+
+    const produto =
+      botao.closest(".produto");
+
+    if (!produto) {
+      return;
+    }
+
+
+    const nome =
+      produto.dataset.nome ||
+      produto.querySelector("h3").textContent;
+
+
+    const preco =
+      Number(produto.dataset.preco);
+
+
+    const imagem =
+      produto.dataset.imagem ||
+      produto.querySelector("img").getAttribute("src");
+
+
+    const produtoExistente =
+      carrinho.find(function (item) {
+
+        return item.nome === nome;
+
+      });
+
+
+    if (produtoExistente) {
+
+      produtoExistente.quantidade++;
+
+    } else {
+
+      carrinho.push({
+
+        nome: nome,
+
+        preco: preco,
+
+        imagem: imagem,
+
+        quantidade: 1
+
+      });
+
+    }
+
+
+    atualizarCarrinho();
+
+    mostrarCarrinhoFlutuante();
+
+  });
+
+});
+
+
+/* =========================
+   ATUALIZAR CARRINHO
+========================= */
+
+function atualizarCarrinho() {
+
+  let quantidadeTotal = 0;
+
+  let subtotal = 0;
+
+
+  carrinho.forEach(function (produto) {
+
+    quantidadeTotal += produto.quantidade;
+
+    subtotal +=
+      produto.preco *
+      produto.quantidade;
+
+  });
+
+
+  /* Contador */
+
+  if (contadorCarrinho) {
+
+    contadorCarrinho.textContent =
+      quantidadeTotal;
+
+  }
+
+
+  /* Subtotal */
+
+  if (subtotalCarrinho) {
+
+    subtotalCarrinho.textContent =
+      formatarPreco(subtotal);
+
+  }
+
+
+  /* Total */
+
+  if (totalCarrinho) {
+
+    totalCarrinho.textContent =
+      formatarPreco(subtotal);
+
+  }
+
+
+  renderizarItensCarrinho();
+
+}
+
+
+/* =========================
+   MOSTRAR PRODUTOS NO CARRINHO
+========================= */
+
+function renderizarItensCarrinho() {
+
+  if (!itensCarrinho) {
+    return;
+  }
+
+
+  if (carrinho.length === 0) {
+
+    itensCarrinho.innerHTML = `
+      <p class="carrinho-vazio">
+        O teu carrinho está vazio.
+      </p>
+    `;
+
+    return;
+
+  }
+
+
+  itensCarrinho.innerHTML = "";
+
+
+  carrinho.forEach(function (produto, indice) {
+
+    const item =
+      document.createElement("div");
+
+    item.className = "item-carrinho";
+
+
+    item.innerHTML = `
+
+      <img
+        src="${produto.imagem}"
+        alt="${produto.nome}"
+      >
+
+      <div class="item-carrinho-info">
+
+        <h3>${produto.nome}</h3>
+
+        <p>
+          ${formatarPreco(produto.preco)}
+        </p>
+
+        <p>
+          Quantidade: ${produto.quantidade}
+        </p>
+
+      </div>
+
+      <button
+        class="remover-item"
+        data-indice="${indice}"
+        aria-label="Remover produto"
+      >
+        ✕
+      </button>
+
+    `;
+
+
+    itensCarrinho.appendChild(item);
+
+  });
+
+
+  /* Botões remover */
+
+  const botoesRemover =
+    document.querySelectorAll(".remover-item");
+
+
+  botoesRemover.forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+      const indice =
+        Number(botao.dataset.indice);
+
+
+      carrinho.splice(indice, 1);
+
+
+      atualizarCarrinho();
+
+
+      if (carrinho.length === 0) {
+
+        esconderCarrinhoFlutuante();
+
+      }
+
+    });
+
+  });
+
+}
+
+
+/* =========================
+   FORMATAR PREÇO
+========================= */
+
+function formatarPreco(valor) {
+
+  return valor.toLocaleString("pt-PT") + " Kz";
+
+}
+
+
+/* =========================
+   CARRINHO FLUTUANTE
+========================= */
+
+const carrinhoFlutuante =
+  document.querySelector(".carrinho-flutuante");
+
+const contadorFlutuante =
+  document.getElementById("contador-flutuante");
+
+
+function mostrarCarrinhoFlutuante() {
+
+  if (!carrinhoFlutuante) {
+    return;
+  }
+
+
+  carrinhoFlutuante.classList.add("visivel");
+
+
+  atualizarContadorFlutuante();
+
+}
+
+
+function esconderCarrinhoFlutuante() {
+
+  if (!carrinhoFlutuante) {
+    return;
+  }
+
+
+  carrinhoFlutuante.classList.remove(
+    "visivel"
+  );
+
+}
+
+
+function atualizarContadorFlutuante() {
+
+  if (!contadorFlutuante) {
+    return;
+  }
+
+
+  let quantidadeTotal = 0;
+
+
+  carrinho.forEach(function (produto) {
+
+    quantidadeTotal += produto.quantidade;
+
+  });
+
+
+  contadorFlutuante.textContent =
+    quantidadeTotal;
+
+}
+
+
+/* =========================
+   CLICAR NO CARRINHO FLUTUANTE
+========================= */
+
+if (carrinhoFlutuante) {
+
+  carrinhoFlutuante.addEventListener(
+    "click",
+    function () {
+
+      abrirJanelaCarrinho();
+
+    }
+  );
+
+}
+
+
+/* =========================
+   FINALIZAR ENCOMENDA
+========================= */
+
+const finalizarEncomenda =
+  document.getElementById(
+    "finalizar-encomenda"
+  );
+
+
+if (finalizarEncomenda) {
+
+  finalizarEncomenda.addEventListener(
+    "click",
+    function () {
+
+      if (carrinho.length === 0) {
+
+        alert(
+          "O teu carrinho está vazio."
+        );
+
+        return;
+
+      }
+
+
+      let mensagem =
+        "Olá HAVEN MUSE! Gostaria de fazer esta encomenda:%0A%0A";
+
+
+      let total = 0;
+
+
+      carrinho.forEach(function (produto) {
+
+        const subtotalProduto =
+          produto.preco *
+          produto.quantidade;
+
+
+        total += subtotalProduto;
+
+
+        mensagem +=
+          "• " +
+          produto.nome +
+          " — " +
+          produto.quantidade +
+          "x — " +
+          formatarPreco(subtotalProduto) +
+          "%0A";
+
+      });
+
+
+      mensagem +=
+        "%0A*Total: " +
+        formatarPreco(total) +
+        "*";
+
+
+      const numeroWhatsApp =
+        "244933091670";
+
+
+      const url =
+        "https://wa.me/" +
+        numeroWhatsApp +
+        "?text=" +
+        mensagem;
+
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================
+   INICIALIZAÇÃO
+========================= */
+
+atualizarCarrinho();
+</script>
+
+<style>
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f3ed;
+  color: #1a1a1a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 15px;
+}
+
+.logo img {
+  width: 280px;
+  height: auto;
+  display: block;
+}
+
+.header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+nav {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background-color: #f7f3ed;
+  padding: 20px;
+  z-index: 1000;
+}
+
+nav a {
+  display: block;
+  color: #1a1a1a;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+nav a:hover {
+  color: #b8860b;
+}
+
+
+/* =========================
+   BOTÃO DO CARRINHO NO HEADER
+========================= */
+
+.carrinho-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+
+  background-color: transparent;
+  color: #1a1a1a;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#contador-carrinho {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  min-width: 20px;
+  height: 20px;
+
+  padding: 2px 5px;
+
+  border-radius: 50%;
+
+  background-color: #b8860b;
+  color: white;
+
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* =========================
+   CARRINHO LATERAL
+========================= */
+
+.carrinho-overlay {
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.45);
+
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+}
+
+.carrinho {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: 380px;
+  max-width: 90%;
+  height: 100vh;
+
+  background-color: #fffdf9;
+
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(100%);
+
+  transition: transform 0.35s ease;
+
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.carrinho.aberto {
+  transform: translateX(0);
+}
+
+.carrinho-overlay.aberto {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================
+   CABEÇALHO DO CARRINHO
+========================= */
+
+.carrinho-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.carrinho-header h2 {
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  color: #1a1a1a;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#fechar-carrinho {
+  position: absolute;
+
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  color: #1a1a1a;
+}
+
+
+/* =========================
+   ITENS DO CARRINHO
+========================= */
+
+.itens-carrinho {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 20px;
+}
+
+.carrinho-vazio {
+  text-align: center;
+
+  color: #555;
+
+  font-size: 16px;
+}
+
+.item-carrinho {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.item-carrinho img {
+  width: 70px;
+  height: 70px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+.item-carrinho-info {
+  flex: 1;
+}
+
+.item-carrinho-info h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.item-carrinho-info p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.remover-item {
+  border: none;
+
+  background: transparent;
+
+  color: #999;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   RESUMO DO CARRINHO
+========================= */
+
+.carrinho-resumo {
+  padding: 20px;
+
+  border-top: 1px solid #ddd;
+
+  background-color: #fff;
+}
+
+.linha-resumo,
+.linha-total {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  font-size: 16px;
+}
+
+.linha-total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  font-size: 20px;
+}
+
+#total-carrinho {
+  color: #2e8b57;
+}
+
+.entrega-gratis {
+  color: #b8860b;
+}
+
+
+/* =========================
+   BOTÃO FINALIZAR
+========================= */
+
+.botao-finalizar {
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 13px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #1a1a1a;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.botao-finalizar:hover {
+  background-color: #b8860b;
+}
+
+
+/* =========================
+   SEÇÕES GERAIS
+========================= */
+
+section {
+  padding: 50px 20px;
+}
+
+section h2 {
+  margin-bottom: 15px;
+
+  font-size: 20px;
+
+  text-align: center;
+}
+
+section p {
+  line-height: 1.6;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 70px 20px 20px;
+
+  text-align: center;
+}
+
+.hero-conteudo {
+  max-width: 800px;
+
+  margin: 0 auto;
+}
+
+.hero-marca {
+  margin: 0 0 15px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 7px;
+
+  color: #b8860b;
+
+  text-align: center;
+}
+
+.hero h2 {
+  max-width: 750px;
+
+  margin: 0 auto 20px;
+
+  font-size: 50px;
+
+  line-height: 1.2;
+
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+
+  text-align: center;
+}
+
+.men {
+  color: #1a1a1a;
+}
+
+.style {
+  color: #b8860b;
+}
+
+.hero-descricao {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  text-align: center;
+
+  color: black;
+
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+.hero-imagem {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 15px;
+}
+
+.botao-produtos {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 12px 25px;
+
+  border-radius: 10px;
+
+  background-color: #1a1a1a;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.botao-produtos:hover {
+  background-color: #b8860b;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   SOBRE A HAVEN MUSE
+========================= */
+
+#quem-somos h2 {
+  margin-bottom: 25px;
+
+  font-size: 16px;
+
+  letter-spacing: 4px;
+
+  color: #b8860b;
+}
+
+.sobre-muse {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  padding: 25px;
+
+  background-color: #fffdf9;
+
+  border-radius: 15px;
+}
+
+.sobre-muse p {
+  margin: 0 0 15px;
+
+  line-height: 1.6;
+
+  font-size: 17px;
+
+  font-family: "Cormorant Garamond",
+    Georgia, serif;
+
+  text-align: left;
+}
+
+.sobre-muse p:last-child {
+  margin-bottom: 0;
+}
+
+.sobre-muse ul {
+  padding-left: 20px;
+
+  margin-top: 10px;
+}
+
+.sobre-muse li {
+  margin-bottom: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+#produtos,
+#outros-produtos {
+  background-color: #fffdf9;
+}
+
+#produtos h2,
+#outros-produtos h2 {
+  margin-bottom: 25px;
+
+  font-size: 25px;
+
+  letter-spacing: 1px;
+
+  color: black;
+
+  text-align: center;
+}
+
+.produtos-intro {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  font-size: 17px;
+
+  color: black;
+
+  text-align: center;
+
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+.imagem-outros-produtos {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px auto 25px;
+  border-radius: 15px;
+}
+
+.produtos {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 0 10px;
+}
+
+.produto {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  max-width: 350px;
+
+  min-height: 500px;
+
+  margin: 0;
+
+  padding: 20px;
+
+  background-color: #fffdf9;
+
+  border-radius: 20px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.produto img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 350px;
+
+  height: 250px;
+
+  margin: 0 0 15px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.produto h3 {
+  margin: 15px 0 8px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: #1a1a1a;
+
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+.produto p {
+  margin: 0;
+
+  line-height: 1.5;
+
+  font-size: 15px;
+
+  color: #555;
+}
+
+.produto-final {
+  margin-top: auto;
+}
+
+.preco {
+  margin: 15px 0;
+
+  font-size: 24px !important;
+
+  font-weight: 700;
+
+  color: black !important;
+
+  letter-spacing: 0.5px;
+}
+
+.etiqueta {
+  display: inline-block;
+
+  align-self: flex-start;
+
+  margin-bottom: 12px;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background-color: #b8860b;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   BOTÕES DOS PRODUTOS
+========================= */
+
+.botao-comprar,
+.botao-carrinho {
+  display: inline-block;
+
+  width: 100%;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.botao-comprar {
+  background-color: #b8860b;
+
+  color: white;
+
+  border: none;
+}
+
+.botao-comprar:hover {
+  background-color: #1a1a1a;
+
+  transform: scale(1.03);
+}
+
+.botao-comprar:active {
+  transform: scale(0.97);
+}
+
+.botao-carrinho {
+  margin-top: 10px;
+
+  background-color: #1a1a1a;
+
+  color: white;
+
+  border: none;
+}
+
+.botao-carrinho:hover {
+  background-color: #b8860b;
+}
+
+
+/* =========================
+   DISPONIBILIDADE
+========================= */
+
+.disponibilidade {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #2e8b57;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.disponibilidade i {
+  margin-right: 5px;
+
+  color: #2e8b57;
+
+  font-size: 8px;
+}
+
+
+/* =========================
+   VANTAGENS
+========================= */
+
+#vantagens {
+  text-align: center;
+}
+
+#vantagens h2 {
+  margin-bottom: 20px;
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+
+  color: #b8860b;
+}
+
+.vantagens-intro {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-size: 17px;
+
+  color: black;
+
+  text-align: center;
+
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+.vantagens-container {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 35px;
+}
+
+.vantagem {
+  width: 100%;
+
+  max-width: 260px;
+
+  padding: 25px 20px;
+
+  background-color: #fffdf9;
+
+  border-radius: 15px;
+
+  text-align: center;
+}
+
+.vantagem h3 {
+  margin-top: 0;
+
+  font-size: 21px;
+
+  color: #b8860b;
+}
+
+.vantagem p {
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  color: #555;
+}
+
+
+/* =========================
+   CONTACTOS
+========================= */
+
+#contactos h2 {
+  margin-bottom: 25px;
+
+  font-size: 25px;
+
+  letter-spacing: 1px;
+}
+
+.contactos-container {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.contacto {
+  width: 100%;
+
+  max-width: 300px;
+
+  min-height: 150px;
+
+  padding: 20px;
+
+  background-color: #ffffff;
+
+  border: 2px solid #b8860b;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  color: black;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.contacto:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contacto h3 {
+  margin-top: 0;
+
+  margin-bottom: 12px;
+
+  font-size: 23px;
+
+  color: #b8860b;
+}
+
+.contacto h3 i {
+  margin-right: 8px;
+
+  font-size: 24px;
+}
+
+
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp-flutuante {
+  position: fixed;
+
+  right: 20px;
+  bottom: 25px;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #25d366;
+
+  color: white;
+
+  font-size: 28px;
+
+  text-decoration: none;
+
+  z-index: 997;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s;
+}
+
+.whatsapp-flutuante:hover {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   CARRINHO FLUTUANTE
+========================= */
+
+.carrinho-flutuante {
+  position: fixed;
+
+  right: 20px;
+
+  top: 50%;
+
+  z-index: 998;
+
+  display: none;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 16px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background-color: #1a1a1a;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+
+  transform: translateY(-50%);
+
+  transition: 0.3s;
+}
+
+.carrinho-flutuante.visivel {
+  display: flex;
+
+  animation: aparecer-carrinho 0.3s ease;
+}
+
+.carrinho-flutuante:hover {
+  background-color: #b8860b;
+
+  transform: translateY(-50%) translateX(-3px);
+}
+
+
+/* Número de produtos */
+
+#contador-flutuante {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 22px;
+
+  height: 22px;
+
+  padding: 2px 6px;
+
+  border-radius: 50%;
+
+  background-color: #b8860b;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+
+/* Seta */
+
+.seta-carrinho {
+  font-size: 13px;
+
+  margin-left: 2px;
+}
+
+
+/* Animação */
+
+@keyframes aparecer-carrinho {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-50%) translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(-50%) translateX(0);
+  }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  width: 100%;
+
+  margin-top: 40px;
+
+  padding: 30px 20px;
+
+  background-color: #1a1a1a;
+
+  color: white;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+footer .footer-nav {
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  margin-top: 15px;
+}
+
+footer .footer-nav a {
+  display: inline-block;
+
+  margin: 0;
+
+  color: white;
+
+  text-decoration: none;
+}
+
+footer .footer-nav a:hover {
+  color: #b8860b;
+}
+
+
+/* =========================
+   TABLET / COMPUTADOR
+========================= */
+
+@media (min-width: 768px) {
+
+  .menu {
+    display: none;
+  }
+
+  header nav {
+    display: flex;
+
+    position: static;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-left: auto;
+
+    padding: 0;
+
+    background-color: transparent;
+  }
+
+  .logo img {
+    width: 280px;
+  }
+
+  header nav a {
+    display: inline-block;
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+  }
+
+  header nav a:hover {
+    color: #b8860b;
+
+    transform: translateY(-2px);
+  }
+
+  .produto {
+    flex: 1;
+  }
+}
+
+
+/* =========================
+   TELEMÓVEL
+========================= */
+
+@media (max-width: 767px) {
+
+  .logo img {
+    width: 220px;
+  }
+
+  .carrinho {
+    width: 90%;
+
+    max-width: 360px;
+  }
+
+  .contactos-container .contacto + .contacto {
+    margin-top: 30px;
+  }
+
+  .carrinho-flutuante {
+    right: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 14px;
+  }
+
+  .whatsapp-flutuante {
+    right: 15px;
+
+    bottom: 20px;
+  }
+
+}
+#outros-produtos {
+  padding-top: 25px;
+}
+</style>
