@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Haven Muse</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+  <a href="#inicio" class="logo">
+    <img src="logo2.png" alt="HAVEN MUSE">
+  </a>
+
+  <div class="header-acoes">
+
+    <button class="carrinho-btn" id="abrir-carrinho" aria-label="Abrir carrinho">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span id="contador-carrinho">0</span>
+    </button>
+
+    <button class="menu" aria-label="Abrir menu">☰</button>
+
+  </div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#quem-somos">Quem somos</a>
+    <a href="#outros-produtos">Outros produtos</a>
+    <a href="#contactos">Contactos</a>
+  </nav>
+
+</header>
+
+
+<!-- CARRINHO -->
+
+<div class="carrinho-overlay" id="carrinho-overlay"></div>
+
+<aside class="carrinho" id="carrinho">
+
+  <div class="carrinho-header">
+
+    <h2>TEU CARRINHO</h2>
+
+    <button id="fechar-carrinho" aria-label="Fechar carrinho">
+      ✕
+    </button>
+
+  </div>
+
+  <div id="itens-carrinho" class="itens-carrinho">
+
+    <p class="carrinho-vazio">
+      O teu carrinho está vazio.
+    </p>
+
+  </div>
+
+  <div class="carrinho-resumo">
+
+    <div class="linha-resumo">
+      <span>Subtotal</span>
+      <strong id="subtotal-carrinho">0 Kz</strong>
+    </div>
+
+    <div class="linha-resumo">
+      <span>Entrega</span>
+      <strong class="entrega-gratis">Grátis</strong>
+    </div>
+
+    <div class="linha-total">
+      <span>Total</span>
+      <strong id="total-carrinho">0 Kz</strong>
+    </div>
+
+    <button id="finalizar-encomenda" class="botao-finalizar">
+      Finalizar encomenda
+    </button>
+
+  </div>
+
+</aside>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section id="inicio" class="hero">
+
+    <div class="hero-conteudo">
+
+      <h2>
+        <span class="men">Men</span><span class="style">Style</span>
+      </h2>
+
+      <p class="hero-descricao">
+        Mais do que uma aparência, é uma identidade de elegância e respeito!
+      </p>
+
+      <a href="#produtos" class="botao-produtos">
+        Ver produtos
+      </a>
+
+      <img src="11.jpg" alt="HAVEN MUSE" class="hero-imagem">
+      <img src="12.jpg" alt="HAVEN MUSE" class="hero-imagem">
+      <img src="13.jpg" alt="HAVEN MUSE" class="hero-imagem">
+
+    </div>
+
+  </section>
+
+
+  <!-- SOBRE A HAVEN MUSE -->
+
+  <section id="quem-somos">
+
+    <h2>SOBRE A HAVEN MUSE</h2>
+
+    <div class="sobre-muse">
+
+      <p>
+        A HAVEN MUSE seleciona produtos que unem presença, exclusividade e
+        elegância, transformando cada detalhe numa expressão da tua
+        personalidade.
+      </p>
+
+      <p>
+        Mais do que reunir produtos, a HAVEN MUSE oferece:
+      </p>
+
+      <ul>
+        <li><strong>ESTILO QUE IMPÕE RESPEITO</strong></li>
+        <li><strong>EXCLUSIVIDADE QUE MARCA PRESENÇA</strong></li>
+        <li><strong>ELEGÂNCIA EM CADA DETALHE</strong></li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUTOS -->
+
+  <section id="produtos">
+
+    <h2>PRODUTOS</h2>
+
+    <p class="produtos-intro">
+      Um único acessório torna-te inesquecível.
+    </p>
+
+    <div class="produtos">
+
+
+      <!-- PRODUTO 1 -->
+
+      <div class="produto"
+        data-nome="Relógio Masculino"
+        data-preco="11590"
+        data-imagem="ft4.jpg">
+
+        <span class="etiqueta">Destaque</span>
+
+        <img src="ft4.jpg" alt="Relógio Masculino">
+
+        <h3>Relógio Masculino</h3>
+
+        <p>
+          Para o acompanhar em todos momentos.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            11.590 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUTO 2 -->
+
+      <div class="produto"
+        data-nome="Óculos Solar"
+        data-preco="9770"
+        data-imagem="ft9.jpg">
+
+        <img src="ft9.jpg" alt="Óculos Solar">
+
+        <h3>Óculos Solar</h3>
+
+        <p>
+          Polarizados para Homens. Estilo Punk de Metal.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            9.770 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUTO 3 -->
+
+      <div class="produto"
+        data-nome="Tshirt"
+        data-preco="5990"
+        data-imagem="ft7.jpg">
+
+        <img src="ft7.jpg" alt="Tshirt">
+
+        <h3>Tshirt</h3>
+
+        <p>
+          Qualidade que te deixa mais solto.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            5.990 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OUTROS PRODUTOS -->
+
+  <section id="outros-produtos">
+
+    <h2>OUTROS PRODUTOS</h2>
+
+    <p class="produtos-intro">
+      Encontre aquela cena que nem sabias que precisavas!
+    </p>
+
+    <img
+      src="10.jpg"
+      alt="Outros produtos"
+      class="imagem-outros-produtos">
+
+
+    <div class="produtos">
+
+
+      <!-- OUTRO PRODUTO 1 -->
+
+      <div class="produto"
+        data-nome="Auricular"
+        data-preco="7789"
+        data-imagem="ft1.jpg">
+
+        <img src="ft1.jpg" alt="Auricular">
+
+        <h3>Auricular</h3>
+
+        <p>
+          Auricular sem fio.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            7.789 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- OUTRO PRODUTO 2 -->
+
+      <div class="produto"
+        data-nome="Máquina de Barbear"
+        data-preco="9730"
+        data-imagem="ft6.jpg">
+
+        <img src="ft6.jpg" alt="Máquina de Barbear">
+
+        <h3>Máquina de Barbear</h3>
+
+        <p>
+          Original máquina de corte cabelo. Barbeador elétrico masculino.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            9.730 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- OUTRO PRODUTO 3 -->
+
+      <div class="produto"
+        data-nome="Fones de Ouvido"
+        data-preco="5450"
+        data-imagem="ft8.jpg">
+
+        <img src="ft8.jpg" alt="Fones de Ouvido">
+
+        <h3>Fones de Ouvido</h3>
+
+        <p>
+          Fones de ouvido sem fio bluetooth à prova d'água.
+        </p>
+
+        <div class="produto-final">
+
+          <p class="preco">
+            5.450 Kz
+          </p>
+
+          <button class="botao-comprar adicionar-carrinho">
+            <i class="fa-solid fa-cart-plus"></i>
+            Adicionar ao carrinho
+          </button>
+
+          <small class="disponibilidade">
+            <i class="fa-solid fa-circle"></i>
+            Disponível
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VANTAGENS -->
+
+  <section id="vantagens">
+
+    <h2>VANTAGENS DA HAVEN MUSE</h2>
+
+    <p class="vantagens-intro">
+      Oferecemos produtos que realmente te tornam diferente.
+    </p>
+
+    <div class="vantagens-container">
+
+      <div class="vantagem">
+
+        <h3>Qualidade</h3>
+
+        <p>
+          Produtos selecionados com atenção.
+        </p>
+
+      </div>
+
+      <div class="vantagem">
+
+        <h3>Variedade</h3>
+
+        <p>
+          Opções para diferentes estilos e necessidades.
+        </p>
+
+      </div>
+
+      <div class="vantagem">
+
+        <h3>Facilidade</h3>
+
+        <p>
+          Compra simples e contacto direto pelo WhatsApp.
+        </p>
+
+      </div>
+
+      <div class="vantagem">
+
+        <h3>Entrega gratuita</h3>
+
+        <p>
+          Receba o seu produto na porta de casa, sem custos de entrega.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTOS -->
+
+  <section id="contactos">
+
+    <h2>CONTACTOS</h2>
+
+    <div class="contactos-container">
+
+      <a
+        href="https://wa.me/244933091670?text=Olá%20HAVEN%20MUSE!%20Gostaria%20de%20saber%20mais%20sobre%20um%20produto."
+        class="contacto whatsapp">
+
+        <h3>
+          <i class="fa-brands fa-whatsapp"></i>
+          WhatsApp
+        </h3>
+
+        <p>
+          Fala connosco diretamente pelo WhatsApp.
+        </p>
+
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/garcia.bernardo.142"
+        class="contacto">
+
+        <h3>
+          <i class="fa-brands fa-facebook"></i>
+          Facebook
+        </h3>
+
+        <p>
+          Acompanha a HAVEN MUSE e vê as novidades.
+        </p>
+
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a
+  href="https://wa.me/244933091670?text=Olá%20HAVEN%20MUSE!%20Gostaria%20de%20saber%20mais."
+  class="whatsapp-flutuante"
+  aria-label="Falar com a HAVEN MUSE pelo WhatsApp">
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- CARRINHO FLUTUANTE -->
+
+<button
+  class="carrinho-flutuante"
+  id="carrinho-flutuante"
+  aria-label="Ver carrinho">
+
+  <i class="fa-solid fa-bag-shopping"></i>
+
+  <span id="contador-flutuante">0</span>
+
+  <span class="seta-carrinho">↑</span>
+
+</button>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 HAVEN MUSE. Todos os direitos reservados.
+  </p>
+
+  <div class="footer-nav">
+
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contactos">Contactos</a>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
